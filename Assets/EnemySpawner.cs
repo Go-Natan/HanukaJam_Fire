@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public float timer = 0;
 //    public Vector3 firstLocation;
     // Update is called once per frame
-    void start()
+    void Start()
     {
         enemyBubble();
   //      firstLocation = new Vector3(0,11,0);
