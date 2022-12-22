@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public GameObject bulletPrefab;
+    public float spawnInterval = 3;
+    public float timer = 0;
     // Update is called once per frame
+    void start()
+    {
+        spawnBubble();
+    }
     void Update()
     {
+        if (timer <spawnInterval)
+        {
+            timer += Time.deltaTime;
+        }
+        else
+        {
+            spawnBubble();
+            timer = 0;
+        }
         
+    }
+    void spawnBubble()
+    {
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
     }
 }
