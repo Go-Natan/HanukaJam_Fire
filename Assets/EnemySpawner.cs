@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public float spawnInterval = 3f;
+    [SerializeField] float spawnInterval = 100f;
     public float timer = 0;
 //    public Vector3 firstLocation;
     // Update is called once per frame

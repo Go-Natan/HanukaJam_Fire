@@ -50,13 +50,13 @@ public class Drop : MonoBehaviour
         //   col.gameObject is the racket
         //   col.transform.position is the racket's position
         //   col.collider is the racket's collider
-
+        float positivityFactor = 0.2f; // makes it so the ball never bounces downwards off the slider.
         // Hit the left Racket?
         if (col.gameObject.name == "LeftSlider") {
             // Calculate hit Factor
             float y = Mathf.Max(hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y),0);
+                col.collider.bounds.size.y),positivityFactor);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(1, y).normalized;
@@ -70,7 +70,7 @@ public class Drop : MonoBehaviour
             // Calculate hit Factor
             float y = Mathf.Max(hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y), 0);
+                col.collider.bounds.size.y), positivityFactor);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(-1, y).normalized;
