@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slider : MonoBehaviour
+public class LeftSlider : MonoBehaviour
 {
     [SerializeField] public float speed = 10f;
     public float movementSpeed = 5f;
@@ -15,6 +15,7 @@ public class Slider : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
