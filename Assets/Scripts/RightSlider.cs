@@ -27,7 +27,7 @@ public class RightSlider : MonoBehaviour
         {
             verticalInput  = 1;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             verticalInput  = -1;
         }

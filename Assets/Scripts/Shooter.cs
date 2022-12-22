@@ -5,10 +5,10 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public float spawnInterval = 0.5f;
+    [SerializeField] float spawnInterval = 0.1f;
     public float timer = 0;
     // Update is called once per frame
-    void start()
+    void Start()
     {
         spawnBubble();
     }
