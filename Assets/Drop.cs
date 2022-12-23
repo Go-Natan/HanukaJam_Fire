@@ -12,9 +12,13 @@ public class Drop : MonoBehaviour
     public float angle_rad;
     public float direction;
     [SerializeField] float ballAngle = 50f;
+    private int xScreenLimit = 20;
+    private int yScreenLimit = 20;
 
     void Start()
     {
+        int xScreenLimit = 20;
+        int yScreenLimit = 20;
         _rb = GetComponent<Rigidbody2D>();
         angle_rad = Mathf.Deg2Rad * ballAngle;
         initialSpeed = 0.2f;
@@ -26,9 +30,10 @@ public class Drop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MathF.Abs(transform.position.x)>11)
+
+        if(MathF.Abs(transform.position.x) > xScreenLimit || MathF.Abs(transform.position.y) > yScreenLimit)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -59,7 +64,8 @@ public class Drop : MonoBehaviour
                 col.collider.bounds.size.y);
 
             // Calculate direction, make length=1 via .normalized
-            Vector2 dir = new Vector2(1, y).normalized;
+            float constrainedY = Mathf.Min(y, 0.25f);// makes it so one padle cant hit to top of screen alone.
+            Vector2 dir = new Vector2(1, constrainedY).normalized;
 
             // Set Velocity with dir * speed
             GetComponent<Rigidbody2D>().velocity = dir * bounceSpeed;
@@ -73,7 +79,8 @@ public class Drop : MonoBehaviour
                 col.collider.bounds.size.y);
 
             // Calculate direction, make length=1 via .normalized
-            Vector2 dir = new Vector2(-1, y).normalized;
+            float constrainedY = Mathf.Min(y, 0.25f);
+            Vector2 dir = new Vector2(-1, constrainedY).normalized;
 
             // Set Velocity with dir * speed
             GetComponent<Rigidbody2D>().velocity = dir * bounceSpeed;

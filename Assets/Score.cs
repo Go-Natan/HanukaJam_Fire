@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     // public GameObject g;//
     public TextMeshProUGUI _scoreMesh;
     public static int score;
-    public static int life;
+    public static int life = 5;
     void Start()
     {
         // _scoreMesh = g.AddComponent<TextMeshProUGUI>();
@@ -19,7 +19,12 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _scoreMesh.text = "Score: "+score+" Life: "+life;
+        _scoreMesh.text = "Score: "+score+" Life: " + life;
+        if (life <= 0)
+        {
+            Debug.Log("Game over!");
+        }
+        
 
     }
 }

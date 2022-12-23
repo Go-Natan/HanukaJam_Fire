@@ -8,6 +8,7 @@ TagManager:
   - LeftSlider
   - RightSlider
   - Drop
+  - Sound
   layers:
   - Default
   - TransparentFX
