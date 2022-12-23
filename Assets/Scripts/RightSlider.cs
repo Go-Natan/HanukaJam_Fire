@@ -15,7 +15,6 @@ public class RightSlider : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
 
     // Update is called once per frame
@@ -33,8 +32,6 @@ public class RightSlider : MonoBehaviour
         }
         //update the position
         transform.position = transform.position + new Vector3(0, verticalInput * movementSpeed * Time.deltaTime, 0);
-
-        // _rb.velocity = new Vector2(_direction * speed, _rb.velocity.y);
-        
+        // _rb.velocity = new Vector2(_direction * speed, _rb.velocity.y);        
     }
 }

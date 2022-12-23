@@ -44,7 +44,7 @@ public class Drop : MonoBehaviour
     // }
     
     void OnCollisionEnter2D(Collision2D col) {
-        Debug.Log("Identified collision with slider " + col.gameObject, col.gameObject);
+        Debug.Log("Identified collision with slider " + col.gameObject+this.gameObject.name, col.gameObject);
         // Note: 'col' holds the collision information. If the
         // Ball collided with a racket, then:
         //   col.gameObject is the racket
