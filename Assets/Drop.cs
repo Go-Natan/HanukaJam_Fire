@@ -54,9 +54,9 @@ public class Drop : MonoBehaviour
         // Hit the left Racket?
         if (col.gameObject.name == "LeftSlider") {
             // Calculate hit Factor
-            float y = Mathf.Max(hitFactor(transform.position,
+            float y = hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y),positivityFactor);
+                col.collider.bounds.size.y);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(1, y).normalized;
@@ -68,9 +68,9 @@ public class Drop : MonoBehaviour
         // Hit the right Racket?
         if (col.gameObject.name == "RightSlider") {
             // Calculate hit Factor
-            float y = Mathf.Max(hitFactor(transform.position,
+            float y = hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y), positivityFactor);
+                col.collider.bounds.size.y);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(-1, y).normalized;

@@ -7,6 +7,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float y_min;
+    public int enemyLives = 10;
 
     public Rigidbody2D _rb;
     //movement speed in units per second
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         _rb = GetComponent<Rigidbody2D>();
         y_min = -9;
     }
@@ -31,18 +33,15 @@ public class Enemy : MonoBehaviour
         
     }
     void OnCollisionEnter2D(Collision2D col) {
-        UnityEngine.Debug.Log("Collision with enemy");
-        // Note: 'col' holds the collision information. If the
-        // Ball collided with a racket, then:
-        //   col.gameObject is the racket
-        //   col.transform.position is the racket's position
-        //   col.collider is the racket's collider
         if (col.gameObject.tag == "Drop")
         {
-            Score.score += 1;
             Destroy(col.gameObject);
-            //Destroy(col.transform.parent.gameObject);
-            Destroy(this.gameObject);
+            enemyLives--;
+            if (enemyLives <= 0)
+            {
+                Destroy(this.gameObject);
+                Score.score += 1;
+            }
         }
     }
 

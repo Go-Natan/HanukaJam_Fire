@@ -32,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     }
     void enemyBubble()
     {
-        Vector3 placeToSpawn = new Vector3(Random.Range(-9, 9), 11, 0);
+        Vector3 placeToSpawn = new Vector3(Random.Range(-9, 9), Random.Range(6,12), 0);
 
         Instantiate(enemyPrefab, placeToSpawn, transform.rotation);
     }
