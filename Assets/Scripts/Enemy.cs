@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         transform.position = transform.position + new Vector3(0, -movementSpeed * Time.deltaTime, 0);
         if (transform.position.y<y_min)
         {
-            // Destroy(this.gameObject);
+            Destroy(this.gameObject);
             Score.life -= 1;
         }
         UnityEngine.Debug.Log($"score:{Score.score},life:{Score.life}");
