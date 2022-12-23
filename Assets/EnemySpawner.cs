@@ -13,13 +13,12 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         timer = 0;
-        spawnInterval = 100f;
         enemyBubble();
   //      firstLocation = new Vector3(0,11,0);
     }
     void Update()
     {
-        UnityEngine.Debug.Log($"Enemy Spawner timer:{timer}");
+        //UnityEngine.Debug.Log($"Enemy Spawner timer:{timer}");
         if (timer < spawnInterval)
         {
             timer += Time.deltaTime;

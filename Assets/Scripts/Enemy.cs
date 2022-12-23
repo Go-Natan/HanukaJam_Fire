@@ -16,8 +16,6 @@ public class Enemy : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         y_min = -9;
-
-        
     }
 
     // Update is called once per frame
@@ -41,9 +39,9 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.tag == "Drop")
         {
             Score.score += 1;
-            //Destroy(col.gameObject);
+            Destroy(col.gameObject);
             //Destroy(col.transform.parent.gameObject);
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
