@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5687505829570247208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -25, z: 0}
-  m_LocalScale: {x: 3.6915, y: 4.0278287, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4440489640355346980, guid: 701fef841a0f7ea4ea9da1dfbe215c3c, type: 3}
-  spawnInterval: 1
+  spawnInterval: 0.5
   timer: 0

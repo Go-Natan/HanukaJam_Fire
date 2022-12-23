@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 89173337}
   m_Layer: 0
   m_Name: Drop
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4440489640355346980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.7, y: 1.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -141,4 +141,4 @@ MonoBehaviour:
   bounceSpeed: 12
   angle_rad: 0
   direction: 0
-  ballAngle: 2.3
+  ballAngle: 10

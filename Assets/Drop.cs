@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,14 +24,13 @@ public class Drop : MonoBehaviour
     }
 
     // Update is called once per frame
-    // void Update()
-    // {
-    //     transform.position = transform.position + new Vector3(direction*speed * Mathf.Cos(angle_rad), speed * Mathf.Sin(angle_rad), 0);
-    //     Vector3 flightDirection =  new Vector3(direction*speed * Mathf.Cos(angle_rad), speed * Mathf.Sin(angle_rad), 0);
-    //     _rb.AddForce(flightDirection);
-    //
-    //     
-    // }
+    void Update()
+    {
+        if(MathF.Abs(transform.position.x)>11)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // void OnCollisionEnter2D(Collision2D collision)
     // {
@@ -44,19 +44,19 @@ public class Drop : MonoBehaviour
     // }
     
     void OnCollisionEnter2D(Collision2D col) {
-        Debug.Log("Identified collision with slider " + col.gameObject, col.gameObject);
+        Debug.Log("Identified collision with slider " + col.gameObject+this.gameObject.name, col.gameObject);
         // Note: 'col' holds the collision information. If the
         // Ball collided with a racket, then:
         //   col.gameObject is the racket
         //   col.transform.position is the racket's position
         //   col.collider is the racket's collider
-
+        float positivityFactor = 0.2f; // makes it so the ball never bounces downwards off the slider.
         // Hit the left Racket?
         if (col.gameObject.name == "LeftSlider") {
             // Calculate hit Factor
             float y = Mathf.Max(hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y),0);
+                col.collider.bounds.size.y),positivityFactor);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(1, y).normalized;
@@ -70,7 +70,7 @@ public class Drop : MonoBehaviour
             // Calculate hit Factor
             float y = Mathf.Max(hitFactor(transform.position,
                 col.transform.position,
-                col.collider.bounds.size.y), 0);
+                col.collider.bounds.size.y), positivityFactor);
 
             // Calculate direction, make length=1 via .normalized
             Vector2 dir = new Vector2(-1, y).normalized;
