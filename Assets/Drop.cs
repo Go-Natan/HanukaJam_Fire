@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,14 +24,13 @@ public class Drop : MonoBehaviour
     }
 
     // Update is called once per frame
-    // void Update()
-    // {
-    //     transform.position = transform.position + new Vector3(direction*speed * Mathf.Cos(angle_rad), speed * Mathf.Sin(angle_rad), 0);
-    //     Vector3 flightDirection =  new Vector3(direction*speed * Mathf.Cos(angle_rad), speed * Mathf.Sin(angle_rad), 0);
-    //     _rb.AddForce(flightDirection);
-    //
-    //     
-    // }
+    void Update()
+    {
+        if(MathF.Abs(transform.position.x)>11)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     // void OnCollisionEnter2D(Collision2D collision)
     // {

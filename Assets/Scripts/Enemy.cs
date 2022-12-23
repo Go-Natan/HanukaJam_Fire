@@ -24,10 +24,11 @@ public class Enemy : MonoBehaviour
         transform.position = transform.position + new Vector3(0, -movementSpeed * Time.deltaTime, 0);
         if (transform.position.y<y_min)
         {
-            Destroy(this.gameObject);
             Score.life -= 1;
+            Destroy(this.gameObject);
+            UnityEngine.Debug.Log($"score:{Score.score},life:{Score.life}");
         }
-        UnityEngine.Debug.Log($"score:{Score.score},life:{Score.life}");
+        
     }
     void OnCollisionEnter2D(Collision2D col) {
         UnityEngine.Debug.Log("Collision with enemy");
