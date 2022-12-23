@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         UnityEngine.Debug.Log($"score:{Score.score},life:{Score.life}");
     }
     void OnCollisionEnter2D(Collision2D col) {
-        //UnityEngine.Debug.Log("Identified collision with slider " + col.gameObject, col.gameObject);
+        UnityEngine.Debug.Log("Collision with enemy");
         // Note: 'col' holds the collision information. If the
         // Ball collided with a racket, then:
         //   col.gameObject is the racket
@@ -41,9 +41,9 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.tag == "Drop")
         {
             Score.score += 1;
-            Destroy(col.gameObject);
-           // Destroy(col.transform.parent.gameObject);
-            Destroy(this.gameObject);
+            //Destroy(col.gameObject);
+            //Destroy(col.transform.parent.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
