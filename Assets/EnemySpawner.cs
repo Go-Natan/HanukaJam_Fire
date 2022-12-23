@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,17 +6,20 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    [SerializeField] float spawnInterval = 100f;
-    public float timer = 0;
+    [SerializeField] float spawnInterval;
+    public float timer;
 //    public Vector3 firstLocation;
     // Update is called once per frame
     void Start()
     {
+        timer = 0;
+        spawnInterval = 1f;
         enemyBubble();
   //      firstLocation = new Vector3(0,11,0);
     }
     void Update()
     {
+        UnityEngine.Debug.Log($"Enemy Spawner timer:{timer}");
         if (timer < spawnInterval)
         {
             timer += Time.deltaTime;
