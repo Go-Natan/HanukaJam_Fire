@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 0}
-  spawnInterval: 1.6
+  spawnInterval: 1.9
   timer: 0

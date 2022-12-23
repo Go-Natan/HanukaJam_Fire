@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 89173338}
-  initialSpeed: 0.2
-  bounceSpeed: 50
+  initialSpeed: 0.15
+  bounceSpeed: 30
   angle_rad: 0
   direction: 0
   ballAngle: 10

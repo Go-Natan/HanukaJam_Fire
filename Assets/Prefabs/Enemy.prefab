@@ -103,11 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   y_min: 0
-  enemyLives: 8
+  enemyLives: 12
   Splash: {fileID: 5401822731962215941, guid: 9ca60290b443dce4c85b17ee3b945fea, type: 3}
   blink: {fileID: 6672544175395384548}
   _rb: {fileID: 0}
-  movementSpeed: 0.88
+  movementSpeed: 1
 --- !u!58 &7278188949386697059
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5072,7 +5072,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 66bf539ef6dd0ea40bce875702ba0a46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5485c6a3918f7694cb26ca6ccb681a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
